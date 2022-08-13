@@ -27,25 +27,28 @@ const Container = styled.div`
 //border-bottom: 0.5px solid rgb(35, 35, 35);
 
 const StyledNav = styled.nav`
-  padding: 1.5rem;
+  padding: 0.3rem 1.7rem;
   backdrop-filter: blur(4px);
   border-bottom: 2px solid ${({ theme }) => theme.border};
   transition: border 0.35s linear;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 3rem;
 
   & > span {
     color: hsl(230deg, 100%, 69%);
     font-weight: 500;
     font-size: 24px;
     letter-spacing: -1px;
+    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     /* font-family: 'Wotfard', Futura, -apple-system, sans-serif; */
   }
 
   ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 10em;
   }
   button > svg {
@@ -67,7 +70,7 @@ export default function Navbar({ toggleThemeHandler }: any) {
     <Container>
       <div></div>
       <StyledNav>
-        <span>JACK</span>
+        <span>Jack</span>
         <ul>
           <li>About</li>
           <li>Projects</li>
