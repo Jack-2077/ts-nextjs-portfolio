@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { Github } from '@icons-pack/react-simple-icons';
 
 const FooterDivider = styled.div`
-  width: 83%;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 95%;
+  border-top: 2px solid ${({ theme }) => theme.borderTop};
+  transition: border 0.35s linear;
 `;
 const StyledViewSource = styled.a`
   text-decoration: none;
@@ -21,7 +22,6 @@ const StyledViewSource = styled.a`
   svg {
     width: 1em;
     margin-left: 0.5em;
-    /* fill: ${(props) => props.theme.footerColor}; */
     &:hover {
       transition: fill 200ms;
     }
