@@ -35,6 +35,11 @@ const StyledSkillContainer = styled.div`
     width: 48px;
     height: 48px;
   }
+
+  .changeFill {
+    fill: ${(props) => props.theme.iconColor};
+    transition: fill 0.35s linear;
+  }
 `;
 
 export default function Skills() {

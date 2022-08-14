@@ -6,6 +6,7 @@ export const lightTheme = {
   border: '#f1f3f5',
   borderTop: '#e6e8eb',
   background: '#363537',
+  iconColor: '#000000',
 };
 
 export const darkTheme = {
@@ -14,6 +15,7 @@ export const darkTheme = {
   border: '#232323',
   borderTop: '#343434',
   background: '#999',
+  iconColor: '#ffffff',
 };
 
 export const GlobalStyles = createGlobalStyle`
