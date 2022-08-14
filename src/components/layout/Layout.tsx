@@ -17,10 +17,10 @@ const StyledSection = styled.section`
   & > div {
     padding: 1em 2em;
     /* max-width: 85%; */
-    margin: auto;
+    /* margin: auto;
     @media (min-width: 1200px) {
       max-width: 800px;
-    }
+    } */
   }
 `;
 export default function Layout({
