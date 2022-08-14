@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { Navbar, Footer } from '../components';
+import { Navbar, Footer } from '../components/common';
 import { useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';

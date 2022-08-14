@@ -1,5 +1,7 @@
 import React from 'react';
-import { Layout } from '../';
+import styled from 'styled-components';
+import { Project } from '../common';
+import { Layout } from '../layout';
 const projects = [
   {
     id: 1,
@@ -70,6 +72,72 @@ const projects = [
   },
 ];
 
+const StyledWrapper = styled.div`
+  padding: 7rem 0px;
+  width: 100%;
+  background-color: rgb(24, 27, 37);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    justify-content: center;
+    margin: 0px;
+    max-width: 120rem;
+    width: 100%;
+
+    @media only screen and (max-width: 75em) {
+      width: 94%;
+    }
+
+    .card {
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px);
+      display: flex;
+      height: 40rem;
+      width: 100%;
+      /* position: relative; */
+      overflow: hidden;
+      border-radius: 1rem;
+      color: rgb(255, 255, 255);
+
+      @media only screen and (max-width: 75em) {
+        height: 100%;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+`;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export default function Projects() {
-  return <Layout title='Projects'>Projects</Layout>;
+  return (
+    <Layout title='PROJECTS'>
+      <StyledContainer>
+        {projects.map((project) => (
+          <Project key={project?.id}>{JSON.stringify(project)}</Project>
+        ))}
+      </StyledContainer>
+      {/* <StyledWrapper>
+        <div className='container'>
+          <div className='card'>
+            <Project>
+              <p>hey</p>
+            </Project>
+          </div>
+        </div>
+      </StyledWrapper> */}
+    </Layout>
+  );
 }

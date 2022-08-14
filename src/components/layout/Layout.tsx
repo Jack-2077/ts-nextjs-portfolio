@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const StyledSection = styled.section`
   h2 {
     font-size: 2em;
-    font-family: 'Bebas Neue', 'Roboto Condensed', sans-serif;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
     padding-bottom: 0.5em;
     border-bottom: 2px solid ${({ theme }) => theme.borderTop};
     margin: auto;
@@ -14,7 +16,7 @@ const StyledSection = styled.section`
 
   & > div {
     padding: 1em 2em;
-    max-width: 85%;
+    /* max-width: 85%; */
     margin: auto;
     @media (min-width: 1200px) {
       max-width: 800px;

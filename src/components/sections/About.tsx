@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout } from '../';
+import { Layout } from '../layout';
 
 export default function About() {
-  return <Layout title='About'>About</Layout>;
+  return <Layout title='ABOUT'>About</Layout>;
 }
