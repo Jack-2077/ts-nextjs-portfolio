@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { About, Projects, Skills } from '../components';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -65,6 +66,9 @@ const Home: NextPage = () => {
           </span>
         </a>
       </footer> */}
+      <Projects />
+      <Skills />
+      <About />
     </div>
   );
 };

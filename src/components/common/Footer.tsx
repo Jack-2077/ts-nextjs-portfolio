@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Github } from '@icons-pack/react-simple-icons';
 
 const FooterDivider = styled.div`
-  width: 95%;
+  width: 100%;
   border-top: 2px solid ${({ theme }) => theme.borderTop};
   transition: border 0.35s linear;
 `;
@@ -26,10 +26,17 @@ const StyledViewSource = styled.a`
       transition: fill 200ms;
     }
   }
+
+  .sourceSpan {
+    min-width: fill-available;
+  }
+
+  .svgSpan {
+    display: grid;
+    align-items: center;
+  }
 `;
-const SourceSpan = styled.span`
-  min-width: fill-available;
-`;
+
 export default function Footer() {
   return (
     <footer>
@@ -39,8 +46,8 @@ export default function Footer() {
           href='https://github.com/Jack-2077/ts-nextjs-portfolio'
           target='_blank'
         >
-          <SourceSpan>View Source</SourceSpan>
-          <span style={{ display: 'grid', alignItems: 'center' }}>
+          <span className='sourceSpan'>View Source</span>
+          <span className='svgSpan'>
             <Github />
           </span>
         </StyledViewSource>

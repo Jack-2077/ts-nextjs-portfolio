@@ -27,7 +27,7 @@ const Container = styled.div`
 //border-bottom: 0.5px solid rgb(35, 35, 35);
 
 const StyledNav = styled.nav`
-  padding: 0.3rem 1.7rem;
+  padding: 0.3rem 1.2rem;
   backdrop-filter: blur(4px);
   border-bottom: 2px solid ${({ theme }) => theme.border};
   transition: border 0.35s linear;
@@ -49,8 +49,18 @@ const StyledNav = styled.nav`
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 10em;
+    width: 50%;
+    justify-content: space-between;
+
+    @media (min-width: 945px) {
+      width: 35%;
+    }
+
+    @media (max-width: 550px) {
+      width: 75%;
+    }
   }
+
   button > svg {
     color: rgb(173, 173, 173);
     width: 1.66em;
@@ -59,7 +69,6 @@ const StyledNav = styled.nav`
 
     &:hover {
       opacity: 1;
-
       transition: opacity 0.2s;
     }
   }
