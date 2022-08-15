@@ -49,7 +49,7 @@ const SkillsData = [
   },
   {
     id: 5,
-    Icon: <Nextdotjs color='rgb(255, 255, 255)' className='changeFill' />,
+    Icon: <Nextdotjs className='changeFill' />,
     label: 'Next.js',
     siteUrl: `https://nextjs.org`,
     type: 'frontend-framework',
@@ -70,7 +70,7 @@ const SkillsData = [
   },
   {
     id: 8,
-    Icon: <Flask color='rgb(255, 255, 255)' className='changeFill' />,
+    Icon: <Flask className='changeFill' />,
     label: 'Flask',
     siteUrl: `https://flask.palletsprojects.com`,
     type: 'server-side',
@@ -112,7 +112,7 @@ const SkillsData = [
   },
   {
     id: 14,
-    Icon: <Apollographql color='rgb(255, 255, 255)' className='changeFill' />,
+    Icon: <Apollographql className='changeFill' />,
     label: 'Apollo GraphQL',
     siteUrl: `https://www.apollographql.com`,
     type: 'tools',
