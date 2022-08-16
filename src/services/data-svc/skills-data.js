@@ -42,7 +42,7 @@ const SkillsData = [
   },
   {
     id: 4,
-    Icon: <ReactJs color='rgb(55, 118, 171)' />,
+    Icon: <ReactJs color='rgb(97, 218, 251)' />,
     label: 'React',
     siteUrl: `https://reactjs.org`,
     type: 'frontend-framework',
@@ -126,14 +126,14 @@ const SkillsData = [
   },
   {
     id: 16,
-    Icon: <Mui color='rgb(102, 178, 255)' />,
+    Icon: <Mui color='rgb(0, 128, 255)' />,
     label: 'MUI',
     siteUrl: `https://mui.com/`,
     type: 'tools',
   },
   {
     id: 17,
-    Icon: <Styledcomponents color='rgb(235, 94, 119)' />,
+    Icon: <Styledcomponents color='rgb(230 73 124)' />,
     label: 'Styled-Components',
     siteUrl: `https://styled-components.com`,
     type: 'tools',

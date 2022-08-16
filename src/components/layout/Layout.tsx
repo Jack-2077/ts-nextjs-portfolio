@@ -25,13 +25,15 @@ const StyledSection = styled.section`
 `;
 export default function Layout({
   title,
+  id,
   children,
 }: {
   title: string;
+  id?: string;
   children: React.ReactNode;
 }) {
   return (
-    <StyledSection>
+    <StyledSection id={id}>
       <h2>{title}</h2>
       <div>{children}</div>
     </StyledSection>

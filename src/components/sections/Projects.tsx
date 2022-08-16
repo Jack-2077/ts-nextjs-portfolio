@@ -123,7 +123,7 @@ const StyledContainer = styled.div`
 
 export default function Projects() {
   return (
-    <Layout title='PROJECTS'>
+    <Layout title='PROJECTS' id='Projects'>
       <StyledContainer>
         {projects.map((project) => (
           <Project key={project?.id}>{JSON.stringify(project)}</Project>

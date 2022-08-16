@@ -37,7 +37,7 @@ const StyledSkillContainer = styled.div`
   }
 
   .changeFill {
-    fill: ${(props) => props.theme.iconColor};
+    fill: ${(props) => props.theme.flipWhiteColor};
     transition: fill 0.35s linear;
   }
 `;

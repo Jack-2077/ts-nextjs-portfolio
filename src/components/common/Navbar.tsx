@@ -1,5 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 
 import '@theme-toggles/react/css/Expand.css';
 import { Expand } from '@theme-toggles/react';
@@ -61,6 +62,33 @@ const StyledNav = styled.nav`
     }
   }
 
+  a {
+    cursor: pointer;
+  }
+  li a:hover {
+    color: rgb(221, 69, 124);
+    transition: color 0.2s ease-in-out;
+  }
+  .aria-invisible {
+    border: 0px;
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0px;
+    position: absolute;
+    width: 1px;
+  }
+  .active-section {
+    color: rgb(221, 69, 124);
+    border-bottom: 2px solid rgb(221, 69, 124);
+
+    &:hover {
+      color: ${(props) => props.theme.flipWhiteColor};
+      transition: color 0.2s ease-in-out;
+    }
+  }
+
   button > svg {
     color: rgb(173, 173, 173);
     width: 1.66em;
@@ -75,14 +103,31 @@ const StyledNav = styled.nav`
 `;
 
 export default function Navbar({ toggleThemeHandler }: any) {
+  const [currentSection, setCurrentSection] = useState('');
   return (
     <Container>
       <div></div>
       <StyledNav>
         <span>Jack</span>
-        <ul>
-          <li>About</li>
-          <li>Projects</li>
+        <ul role='list'>
+          <span className='aria-invisible'>
+            current section: {currentSection}
+          </span>
+          {['Projects', 'About'].map((section) => (
+            <li>
+              <Link
+                activeClass='active-section'
+                to={section}
+                aria-label={`scroll to ${section} section`}
+                onSetActive={(section) => setCurrentSection(section)}
+                offset={-90}
+                spy
+                smooth
+              >
+                {section}
+              </Link>
+            </li>
+          ))}
           <li>
             <span onClick={toggleThemeHandler}>
               <Expand />
