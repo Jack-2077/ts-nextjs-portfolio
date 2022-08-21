@@ -29,13 +29,13 @@ const Container = styled.div`
 
 const StyledNav = styled.nav`
   padding: 0.3rem 1.2rem;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   border-bottom: 2px solid ${({ theme }) => theme.border};
   transition: border 0.35s linear;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 3rem;
+  min-height: 4rem;
 
   & > span {
     color: hsl(230deg, 100%, 69%);

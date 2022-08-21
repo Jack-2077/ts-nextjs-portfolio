@@ -73,7 +73,7 @@ const projects = [
 ];
 
 const StyledWrapper = styled.div`
-  padding: 7rem 0px;
+  padding: 7rem 0;
   width: 100%;
   background-color: rgb(24, 27, 37);
   display: flex;
@@ -95,7 +95,6 @@ const StyledWrapper = styled.div`
     }
 
     .card {
-      opacity: 1;
       transform: translate3d(0px, 0px, 0px);
       display: flex;
       height: 40rem;
@@ -117,8 +116,17 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledContainer = styled.div`
+  /* padding: 7rem 0; */
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  height: max-content;
+  justify-content: center;
+  margin: 0;
+  max-width: 120rem;
+  gap: 2em;
 `;
 
 export default function Projects() {

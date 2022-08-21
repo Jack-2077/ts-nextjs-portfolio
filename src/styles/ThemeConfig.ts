@@ -20,6 +20,14 @@ export const darkTheme = {
 
 export const GlobalStyles = createGlobalStyle`
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
 html,
 body {
   padding: 0;
