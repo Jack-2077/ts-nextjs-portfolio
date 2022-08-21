@@ -355,6 +355,10 @@ const StyledProject = styled.div`
         transition: all 0.25s ease-in-out 0s;
         display: flex;
 
+        /* @media only screen and (max-width: 520px) {
+          padding: 0.75rem 1.8rem 0.75rem 0.3rem;
+        } */
+
         span {
           flex-shrink: 0;
           max-width: 100%;
@@ -385,42 +389,30 @@ const StyledProject = styled.div`
     }
   }
 `;
-export default function Project({ children }: { children: React.ReactNode }) {
+export default function Project({ data }: { data: any }) {
   return (
     <StyledProject>
       <div className='project'>
         <h3 className='project__heading' role='heading'>
-          Demo Reel Showcase
+          {data.title}
         </h3>
         <p className='project__description' role='note'>
-          Portfolio website for a client to showcase demo reels and pictures
+          {data.description}
         </p>
 
         <ul aria-label='tech stack' className='project__techStack'>
-          <li>
-            <p>Next.js</p>
-          </li>
-          <li>
-            <p>AWS S3</p>
-          </li>
-          <li>
-            <p>CloudFront CDN</p>
-          </li>
-          <li>
-            <p>Framer Motion</p>
-          </li>
-          <li>
-            <p>CSS Modules</p>
-          </li>
+          {data.stack.map((item: any) => (
+            <li key={`${data.id}-${item}`}>
+              <p>{item}</p>
+            </li>
+          ))}
         </ul>
-
         <div className='project__btns'>
           <a
             role='link'
-            aria-label='view Fascio Product Bundler details'
+            aria-label={`View ${data.title} details`}
             tabIndex={0}
-            href='/project/3?web=true'
-            className='StyledLinkBtn-sc-6mvqga-0 iDWWjt'
+            href={data.repoLink}
           >
             <button>
               <span>
@@ -428,19 +420,21 @@ export default function Project({ children }: { children: React.ReactNode }) {
               </span>
             </button>
           </a>
-          <a
-            role='link'
-            aria-label='View Fascio Product Bundler site'
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://fascio.herokuapp.com/'
-          >
-            <button>
-              <span>
-                see live site <ExternalLinkIcon />
-              </span>
-            </button>
-          </a>
+          {data.demoLink && (
+            <a
+              role='link'
+              aria-label={`View ${data.title} site`}
+              target='_blank'
+              rel='noopener noreferrer'
+              href={data.demoLink}
+            >
+              <button>
+                <span>
+                  see live site <ExternalLinkIcon />
+                </span>
+              </button>
+            </a>
+          )}
         </div>
       </div>
       <div className='project__img'>
