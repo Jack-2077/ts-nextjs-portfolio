@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Project } from '../common';
 import { Layout } from '../layout';
-import ProjectsData from '../../services/data-svc/projects-data';
+import ProjectsData, { dataType } from '../../services/data-svc/projects-data';
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -21,8 +21,8 @@ export default function Projects() {
   return (
     <Layout title='PROJECTS' id='Projects'>
       <StyledContainer>
-        {ProjectsData.map((project) => (
-          <Project key={project?.id} data={project}></Project>
+        {ProjectsData.map((project: dataType) => (
+          <Project key={project.id} {...project}></Project>
         ))}
       </StyledContainer>
       {/* <StyledWrapper>

@@ -1,4 +1,13 @@
-const ProjectsData = [
+export interface dataType {
+  id: number;
+  title: string;
+  description: string;
+  stack: string[];
+  repoLink: string;
+  demoLink?: string;
+}
+
+const ProjectsData: dataType[] = [
   {
     id: 1,
     title: 'Demo Reel Showcase',
@@ -29,7 +38,6 @@ const ProjectsData = [
     repoLink: 'https://github.com/Jack-2077/Tuned',
     demoLink: 'https://tuned-tracks.vercel.app/',
   },
-
   {
     id: 3,
     title: 'Spotified',
@@ -59,7 +67,6 @@ const ProjectsData = [
     ],
     repoLink: 'https://github.com/Jack-2077/Prattle-v2',
   },
-  ,
   {
     id: 5,
     title: 'Prattle-v1',

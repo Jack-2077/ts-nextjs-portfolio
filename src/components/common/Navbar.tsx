@@ -114,7 +114,7 @@ export default function Navbar({ toggleThemeHandler }: any) {
             current section: {currentSection}
           </span>
           {['Projects', 'About'].map((section) => (
-            <li>
+            <li key={section}>
               <Link
                 activeClass='active-section'
                 to={section}

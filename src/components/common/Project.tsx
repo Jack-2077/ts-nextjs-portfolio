@@ -2,277 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { ExternalLinkIcon } from './';
-
-const StyledProjectContainer = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: max-content;
-  justify-content: center;
-  margin: 0px;
-  max-width: 120rem;
-  width: 100%;
-
-  @media only screen and (max-width: 75em) {
-    width: 94%;
-  }
-
-  & > div {
-    opacity: 1;
-    transform: translate3d(0px, 0px, 0px);
-    display: flex;
-    height: 40rem;
-    width: 100%;
-    /* position: relative; */
-    overflow: hidden;
-    border-radius: 1rem;
-    color: rgb(255, 255, 255);
-
-    @media only screen and (max-width: 75em) {
-      height: 100%;
-    }
-
-    &:not(:last-of-type) {
-      margin-bottom: 3rem;
-    }
-  }
-`;
-
-const StyledProjecttt = styled.div`
-  margin-top: 2em;
-  width: 100%;
-  height: 20rem;
-  background: linear-gradient(
-    90deg,
-    rgb(18, 18, 18) 0%,
-    rgb(18, 18, 18) 56%,
-    rgba(40, 40, 40, 0) 95%
-  );
-  border-radius: 1rem;
-
-  &:not(:last-of-type) {
-    margin-bottom: 3rem;
-  }
-
-  .project {
-    display: flex;
-    flex-direction: column;
-    padding-left: 2rem;
-
-    &__heading {
-      font-weight: 500;
-      font-size: 2rem;
-    }
-
-    &__techStack {
-      list-style: none;
-      width: 100%;
-      max-width: 45rem;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 10px 0 30px 0;
-      padding-left: 0;
-
-      li {
-        background-color: #fafafa1b;
-        padding: 8px;
-        text-align: center;
-        border-radius: 150px;
-        margin-right: 5px;
-        margin-top: 10px;
-        line-height: 1;
-
-        p {
-          font-size: 11px;
-          color: #fafafa;
-        }
-      }
-
-      @media only screen and (max-width: ${750 / 16}em) {
-        justify-content: center;
-        .tag-item p {
-          font-size: 10px;
-          color: #fafafa;
-        }
-      }
-    }
-  }
-
-  /* margin-bottom: 3rem;
-  height: 40rem;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 1rem;
-  color: rgb(255, 255, 255);
-  display: flex;
-
-  @media only screen and (max-width: 75em) {
-    height: 100%;
-  }
-
-  .project {
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(
-      90deg,
-      rgb(18, 18, 18) 0%,
-      rgb(18, 18, 18) 56%,
-      rgba(40, 40, 40, 0) 95%
-    );
-    height: 100%;
-    padding: 8rem 10rem 10rem;
-    width: 100%;
-    z-index: 10;
-
-    @media only screen and (max-width: 75em) {
-      padding: 5rem;
-    }
-
-    &__heading {
-      color: rgb(255, 255, 255);
-      font-weight: 500;
-      font-size: 2.5rem;
-    }
-
-    &__description {
-      padding: 2.5rem 0 0 0;
-      font-size: 1.4rem;
-      font-weight: 300;
-      max-width: 45rem;
-    }
-
-    &__techStack {
-      width: 100%;
-      max-width: 45rem;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 10px 0px 30px;
-      list-style: none;
-    }
-
-    &__techStack li {
-      background-color: rgba(250, 250, 250, 0.106);
-      padding: 8px;
-      text-align: center;
-      border-radius: 100px;
-      margin-right: 5px;
-      margin-top: 10px;
-      line-height: 1;
-    }
-
-    &__techStack li p {
-      font-size: 11px;
-      color: rgb(250, 250, 250);
-    }
-
-    &__btns {
-      display: flex;
-      justify-content: space-between;
-      width: 34rem;
-    }
-
-    &__btns a {
-      border: none;
-      border-radius: 8px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      font-size: 1.4rem;
-      text-transform: capitalize;
-      transition: all 0.25s ease-in-out 0s;
-      height: 4.5rem;
-      min-width: 16rem;
-      position: relative;
-      background-color: rgb(84, 142, 177);
-      color: rgb(255, 255, 255);
-    }
-
-    &__btns a + a {
-      border-radius: 8px;
-      position: relative;
-      background-color: transparent;
-      border: 1px solid rgb(255, 255, 255);
-    }
-
-    &__btns span {
-      margin-right: 1rem;
-    }
-
-    &__img {
-      display: inline-block;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      width: 60rem;
-      z-index: 0;
-      div {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-      }
-    }
-    svg {
-      height: 16px;
-      width: 16px;
-    }
-  } */
-
-  //second
-  /* .project__techStack li {
-    background-color: rgba(250, 250, 250, 0.106);
-    padding: 8px;
-    text-align: center;
-    border-radius: 100px;
-    margin-right: 5px;
-    margin-top: 10px;
-    line-height: 1;
-  }
-
-  .project__techStack li p {
-    font-size: 11px;
-    color: rgb(250, 250, 250);
-  }
-
-  .project__btns {
-    display: flex;
-    justify-content: space-between;
-    width: 34rem;
-  }
-
-  .project__btns a {
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    font-size: 1.4rem;
-    text-transform: capitalize;
-    transition: all 0.25s ease-in-out 0s;
-    height: 4.5rem;
-    min-width: 16rem;
-    position: relative;
-    background-color: rgb(84, 142, 177);btns
-    color: rgb(255, 255, 255);
-  }
-
-  .project__btns a + a {
-    border-radius: 8px;
-    position: relative;
-    background-color: transparent;
-    border: 1px solid rgb(255, 255, 255);
-  }
-
-  .project__btns span {
-    margin-right: 1rem;
-  }
-
-  svg {
-    height: 16px;
-    width: 16px;
-  } */
-`;
+import { dataType } from '../../services/data-svc/projects-data';
 
 const StyledProject = styled.div`
   margin-top: 2em;
@@ -389,20 +119,27 @@ const StyledProject = styled.div`
     }
   }
 `;
-export default function Project({ data }: { data: any }) {
+export default function Project({
+  id,
+  title,
+  description,
+  stack,
+  repoLink,
+  demoLink,
+}: dataType) {
   return (
     <StyledProject>
       <div className='project'>
         <h3 className='project__heading' role='heading'>
-          {data.title}
+          {title}
         </h3>
         <p className='project__description' role='note'>
-          {data.description}
+          {description}
         </p>
 
         <ul aria-label='tech stack' className='project__techStack'>
-          {data.stack.map((item: any) => (
-            <li key={`${data.id}-${item}`}>
+          {stack.map((item: string) => (
+            <li key={`${id}-${item}`}>
               <p>{item}</p>
             </li>
           ))}
@@ -410,9 +147,9 @@ export default function Project({ data }: { data: any }) {
         <div className='project__btns'>
           <a
             role='link'
-            aria-label={`View ${data.title} details`}
+            aria-label={`View ${title} details`}
             tabIndex={0}
-            href={data.repoLink}
+            href={repoLink}
           >
             <button>
               <span>
@@ -420,13 +157,13 @@ export default function Project({ data }: { data: any }) {
               </span>
             </button>
           </a>
-          {data.demoLink && (
+          {demoLink && (
             <a
               role='link'
-              aria-label={`View ${data.title} site`}
+              aria-label={`View ${title} site`}
               target='_blank'
               rel='noopener noreferrer'
-              href={data.demoLink}
+              href={demoLink}
             >
               <button>
                 <span>
