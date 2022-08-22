@@ -4,12 +4,39 @@ import styled from 'styled-components';
 import { ExternalLinkIcon } from './';
 import { projectDataType } from '../../services/data-svc/projects-data';
 
-const StyledProject = styled.div`
+interface Props {
+  bgColor: string;
+}
+
+const adjust = (hexColor: string, magnitude: number) => {
+  hexColor = hexColor.replace(`#`, ``);
+  if (hexColor === '121212') {
+    return '#ffffff';
+  }
+  if (hexColor.length === 6) {
+    const decimalColor = parseInt(hexColor, 16);
+    let r = (decimalColor >> 16) + magnitude;
+    r > 255 && (r = 255);
+    r < 0 && (r = 0);
+    let g = (decimalColor & 0x0000ff) + magnitude;
+    g > 255 && (g = 255);
+    g < 0 && (g = 0);
+    let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
+    b > 255 && (b = 255);
+    b < 0 && (b = 0);
+    return `#${(g | (b << 8) | (r << 16)).toString(16)}`;
+  } else {
+    return hexColor;
+  }
+};
+
+const StyledProject = styled.div<Props>`
+  color: white;
   margin-top: 2em;
   display: flex;
   width: 100%;
   border-radius: 1rem;
-  background-color: lightcoral;
+  background-color: ${(props) => props.bgColor || 'red'};
   padding-left: 2em;
   padding-right: 2em;
   gap: 2%;
@@ -39,9 +66,6 @@ const StyledProject = styled.div`
     &__heading {
       font-size: 1.65rem;
       font-family: Arial, Helvetica, sans-serif;
-      /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif; */
     }
 
     &__description {
@@ -78,7 +102,7 @@ const StyledProject = styled.div`
       gap: 3em;
 
       button {
-        background-color: #b34343;
+        background-color: ${(props) => adjust(props.bgColor, 45)};
         border: 0;
         border-radius: 0.5rem;
         font-size: 0.875rem;
@@ -131,9 +155,10 @@ export default function Project({
   repoLink,
   demoLink,
   img,
+  color,
 }: projectDataType) {
   return (
-    <StyledProject>
+    <StyledProject bgColor={color}>
       <div className='project'>
         <h3 className='project__heading' role='heading'>
           {title}

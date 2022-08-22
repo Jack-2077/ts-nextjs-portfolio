@@ -18,6 +18,7 @@ export interface projectDataType {
   repoLink: string;
   demoLink?: string;
   img: string | StaticImageData;
+  color: string;
 }
 
 const ProjectsData: projectDataType[] = [
@@ -36,6 +37,7 @@ const ProjectsData: projectDataType[] = [
     repoLink: 'https://github.com/Jack-2077/demo-reel-showcase-nextjs',
     demoLink: 'https://www.kalllikadaproductions.ca/',
     img: demoReel,
+    color: '#ba6031',
   },
   {
     id: 2,
@@ -53,11 +55,13 @@ const ProjectsData: projectDataType[] = [
     repoLink: 'https://github.com/Jack-2077/Tuned',
     demoLink: 'https://tuned-tracks.vercel.app/',
     img: tuned,
+    color: '#bb86fc',
   },
   {
     id: 3,
     title: 'Spotified',
-    description: 'Full Stack web app for visualizing personalized Spotify data',
+    description:
+      'Full Stack web app for visualizing personalized Spotify data using Spotify API',
     stack: [
       'React.js',
       'Spotify API',
@@ -67,6 +71,7 @@ const ProjectsData: projectDataType[] = [
     ],
     repoLink: 'https://github.com/Jack-2077/Spotified',
     img: spotified,
+    color: '#121212',
   },
   {
     id: 4,
@@ -84,6 +89,7 @@ const ProjectsData: projectDataType[] = [
     ],
     repoLink: 'https://github.com/Jack-2077/Prattle-v2',
     img: prattle2,
+    color: '#a744d1',
   },
   {
     id: 5,
@@ -92,6 +98,7 @@ const ProjectsData: projectDataType[] = [
     stack: ['React', 'MaterialUI', 'Node.js', 'Express.js', 'MongoDB'],
     repoLink: 'https://github.com/Jack-2077/Prattle',
     img: prattle2,
+    color: '#121212',
   },
 ];
 
