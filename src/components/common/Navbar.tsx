@@ -5,10 +5,9 @@ import { Link } from 'react-scroll';
 import '@theme-toggles/react/css/Expand.css';
 import { Expand } from '@theme-toggles/react';
 
-type Props = {
-  children: ReactNode;
-  // any props that come into the component
-};
+interface toggleThemeType {
+  toggleThemeHandler: () => void;
+}
 
 const Container = styled.div`
   z-index: 10;
@@ -23,9 +22,6 @@ const Container = styled.div`
     position: absolute;
   }
 `;
-
-//0.5px solid rgba(220, 220, 220, 0.85);
-//border-bottom: 0.5px solid rgb(35, 35, 35);
 
 const StyledNav = styled.nav`
   padding: 0.3rem 1.2rem;
@@ -42,8 +38,6 @@ const StyledNav = styled.nav`
     font-weight: 500;
     font-size: 24px;
     letter-spacing: -1px;
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
-    /* font-family: 'Wotfard', Futura, -apple-system, sans-serif; */
   }
 
   ul {
@@ -102,7 +96,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-export default function Navbar({ toggleThemeHandler }: any) {
+export default function Navbar({ toggleThemeHandler }: toggleThemeType) {
   const [currentSection, setCurrentSection] = useState('');
   return (
     <Container>

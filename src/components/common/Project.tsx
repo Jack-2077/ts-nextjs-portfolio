@@ -1,8 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import styled from 'styled-components';
 import { ExternalLinkIcon } from './';
-import { dataType } from '../../services/data-svc/projects-data';
+import { projectDataType } from '../../services/data-svc/projects-data';
 
 const StyledProject = styled.div`
   margin-top: 2em;
@@ -38,6 +38,10 @@ const StyledProject = styled.div`
 
     &__heading {
       font-size: 1.65rem;
+      font-family: Arial, Helvetica, sans-serif;
+      /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif; */
     }
 
     &__description {
@@ -126,7 +130,8 @@ export default function Project({
   stack,
   repoLink,
   demoLink,
-}: dataType) {
+  img,
+}: projectDataType) {
   return (
     <StyledProject>
       <div className='project'>
@@ -174,9 +179,9 @@ export default function Project({
           )}
         </div>
       </div>
+
       <div className='project__img'>
-        <img src='/testimage.jpg' alt='' />
-        {/* <Image role='img' layout='fill' src='/testimage.webp' /> */}
+        <Image role='img' src={img} />
       </div>
     </StyledProject>
   );
