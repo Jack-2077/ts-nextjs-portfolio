@@ -2,9 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Project } from '../common';
 import { Layout } from '../layout';
-import ProjectsData, {
-  projectDataType,
-} from '../../services/data-svc/projects-data';
+import { projectDataType } from '../../services/data-svc/projects-data';
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -19,7 +17,7 @@ const StyledContainer = styled.div`
   gap: 2em;
 `;
 
-export default function Projects() {
+export default function Projects({ ProjectsData }: any) {
   return (
     <Layout title='PROJECTS' id='Projects'>
       <StyledContainer>
@@ -27,15 +25,6 @@ export default function Projects() {
           <Project key={project.id} {...project}></Project>
         ))}
       </StyledContainer>
-      {/* <StyledWrapper>
-        <div className='container'>
-          <div className='card'>
-            <Project>
-              <p>hey</p>
-            </Project>
-          </div>
-        </div>
-      </StyledWrapper> */}
     </Layout>
   );
 }

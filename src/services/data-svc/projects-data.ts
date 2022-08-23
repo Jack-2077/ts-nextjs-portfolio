@@ -43,7 +43,7 @@ const ProjectsData: projectDataType[] = [
     id: 2,
     title: 'Tuned',
     description:
-      'Web app for adding and playing your favorite tracks from youtube and soundcloud in one place',
+      'Web app for adding and playing your favorite tracks from youtube and soundcloud',
     stack: [
       'React',
       'React Player',

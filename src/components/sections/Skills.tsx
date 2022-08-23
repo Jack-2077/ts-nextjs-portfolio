@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout } from '../layout';
 import styled from 'styled-components';
 
-import SkillsData from '../../services/data-svc/skills-data';
+import { SkillsData } from '../../services/data-svc';
 
 const StyledWrapper = styled.div`
   margin-top: 2em;

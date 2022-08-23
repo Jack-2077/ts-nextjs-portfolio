@@ -36,9 +36,8 @@ const StyledProject = styled.div<Props>`
   display: flex;
   width: 100%;
   border-radius: 1rem;
-  background-color: ${(props) => props.bgColor || 'red'};
-  padding-left: 2em;
-  padding-right: 2em;
+  background-color: ${(props) => props.bgColor};
+  padding: 2em;
   gap: 2%;
 
   @media only screen and (max-width: 980px) {
@@ -64,7 +63,7 @@ const StyledProject = styled.div<Props>`
     justify-content: center;
 
     &__heading {
-      font-size: 1.65rem;
+      font-size: 1.8rem;
       font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -101,6 +100,10 @@ const StyledProject = styled.div<Props>`
       justify-content: flex-start;
       gap: 3em;
 
+      @media only screen and (max-width: 520px) {
+        gap: 1.8em;
+      }
+
       button {
         background-color: ${(props) => adjust(props.bgColor, 45)};
         border: 0;
@@ -113,9 +116,10 @@ const StyledProject = styled.div<Props>`
         transition: all 0.25s ease-in-out 0s;
         display: flex;
 
-        /* @media only screen and (max-width: 520px) {
-          padding: 0.75rem 1.8rem 0.75rem 0.3rem;
-        } */
+        @media only screen and (max-width: 520px) {
+          width: 32vw;
+          padding: 0.75rem 0 0.75rem 0.5rem;
+        }
 
         span {
           flex-shrink: 0;
