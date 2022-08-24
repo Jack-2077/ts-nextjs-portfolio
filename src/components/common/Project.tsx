@@ -210,7 +210,7 @@ export default function Project({
       </div>
 
       <div className='project__img'>
-        <Image role='img' src={img} />
+        <Image role='img' src={img} alt={`snapshot of ${title} website`} />
       </div>
     </StyledProject>
   );

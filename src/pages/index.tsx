@@ -67,8 +67,8 @@ const Home = ({ ProjectsData }: Props) => {
         <p>Hi, my name is</p>
         <p>Jack John</p>
         <p>
-          I'm a web developer based in Vancouver, BC specializing in building
-          high-quality websites and applications.
+          I&apos;m a web developer based in Vancouver, BC specializing in
+          building high-quality websites and applications.
         </p>
       </header>
       <main>
