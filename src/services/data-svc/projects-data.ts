@@ -2,6 +2,7 @@ import demoReel from '../../../public/assets/demo-reel.png';
 import tuned from '../../../public/assets/tuned.jpg';
 import spotified from '../../../public/assets/spotified.jpg';
 import prattle2 from '../../../public/assets/prattle-v2.jpg';
+import todolist from '../../../public/assets/todo-list.jpg';
 
 type StaticImageData = {
   src: string;
@@ -93,12 +94,14 @@ const ProjectsData: projectDataType[] = [
   },
   {
     id: 5,
-    title: 'Prattle-v1',
-    description: 'Full Stack application',
-    stack: ['React', 'MaterialUI', 'Node.js', 'Express.js', 'MongoDB'],
-    repoLink: 'https://github.com/Jack-2077/Prattle',
-    img: prattle2,
-    color: '#121212',
+    title: 'Todo-App-v2',
+    description:
+      'A updated version with a state management library and graphql queries to fetch data',
+    stack: ['React', 'Apollo Client', 'GraphQL', 'Postgres'],
+    demoLink: 'https://todolist-v2-apollo.vercel.app',
+    repoLink: 'https://github.com/Jack-2077/Todo-App',
+    img: todolist,
+    color: '#ff6665',
   },
 ];
 

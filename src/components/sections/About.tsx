@@ -5,13 +5,6 @@ import { Layout } from '../layout';
 
 import { Gmail, Linkedin, Github } from '@icons-pack/react-simple-icons';
 
-type socialsType = {
-  title: string;
-  Icon: any;
-  link: string;
-  fill: string;
-};
-
 const socials = [
   {
     title: 'Gmail',
@@ -64,7 +57,7 @@ interface Props {
 
 const StyledIcon = styled.span<Props>`
   svg {
-    transition: fill 200ms;
+    transition: fill 200ms, color 0.35s linear;
     color: ${({ theme }) => theme.flipWhiteColor};
   }
   svg:hover {
@@ -84,7 +77,7 @@ export default function About() {
             alt='Logo of Langara College'
           />
           <StyledSocialContainer>
-            {socials.map(({ title, Icon, link, fill }: socialsType) => (
+            {socials.map(({ title, Icon, link, fill }) => (
               <a
                 href={link}
                 role='link'
