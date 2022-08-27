@@ -183,6 +183,8 @@ export default function Project({
             role='link'
             aria-label={`View ${title} details`}
             tabIndex={0}
+            target='_blank'
+            rel='noopener noreferrer'
             href={repoLink}
           >
             <button>

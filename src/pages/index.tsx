@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
-import { About, Projects, Skills } from '../components/sections';
+import { About, Projects, Skills, Education } from '../components/sections';
 import { ProjectsData, type projectDataType } from '../services/data-svc';
 
 interface Props {
@@ -25,15 +25,14 @@ const StyledContainer = styled.div`
     width: 100%;
     & > p {
       &:nth-child(1) {
-        color: rgb(221, 69, 124);
         margin: 0px 0px 0.5rem;
         max-width: none;
         font-weight: 300;
       }
 
       &:nth-child(2) {
-        color: rgb(255, 255, 255);
-        font-size: 6rem;
+        color: ${({ theme }) => theme.secondary};
+        font-size: 7rem;
         font-weight: 900;
         letter-spacing: -3px;
         line-height: 1.2;
@@ -41,7 +40,6 @@ const StyledContainer = styled.div`
       }
 
       &:nth-child(3) {
-        color: rgba(255, 255, 255, 0.65);
         margin: 2.5rem 0px;
         max-width: 400px;
         font-weight: 300;
@@ -51,6 +49,16 @@ const StyledContainer = styled.div`
 
   @media only screen and (max-width: 650px) {
     padding: 0;
+
+    header {
+      padding-left: 6%;
+      align-items: flex-start;
+      & > p {
+        &:nth-child(2) {
+          font-size: 4rem;
+        }
+      }
+    }
   }
 `;
 
@@ -66,15 +74,13 @@ const Home = ({ ProjectsData }: Props) => {
       <header>
         <p>Hi, my name is</p>
         <p>Jack John</p>
-        <p>
-          I&apos;m a web developer based in Vancouver, BC specializing in
-          building high-quality websites and applications.
-        </p>
+        <p>I&apos;m a full stack web developer based in Vancouver, BC</p>
       </header>
       <main>
         <Projects ProjectsData={ProjectsData} />
         <Skills />
         <About />
+        <Education />
       </main>
     </StyledContainer>
   );

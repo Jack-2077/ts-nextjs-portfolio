@@ -29,16 +29,9 @@ const StyledNav = styled.nav`
   border-bottom: 2px solid ${({ theme }) => theme.border};
   transition: border 0.35s linear;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   min-height: 4rem;
-
-  & > span {
-    color: hsl(230deg, 100%, 69%);
-    font-weight: 500;
-    font-size: 24px;
-    letter-spacing: -1px;
-  }
 
   ul {
     list-style: none;
@@ -60,7 +53,7 @@ const StyledNav = styled.nav`
     cursor: pointer;
   }
   li a:hover {
-    color: rgb(221, 69, 124);
+    color: ${({ theme }) => theme.secondary};
     transition: color 0.2s ease-in-out;
   }
   .aria-invisible {
@@ -74,8 +67,8 @@ const StyledNav = styled.nav`
     width: 1px;
   }
   .active-section {
-    color: rgb(221, 69, 124);
-    border-bottom: 2px solid rgb(221, 69, 124);
+    color: ${({ theme }) => theme.secondary};
+    border-bottom: 2px solid ${({ theme }) => theme.secondary};
 
     &:hover {
       color: ${(props) => props.theme.flipWhiteColor};
@@ -102,7 +95,6 @@ export default function Navbar({ toggleThemeHandler }: toggleThemeType) {
     <Container>
       <div></div>
       <StyledNav>
-        <span>Jack</span>
         <ul role='list'>
           <span className='aria-invisible'>
             current section: {currentSection}
