@@ -112,12 +112,14 @@ export default function About() {
         <div className='description'>
           <p>
             Hello! I'm Jack, a Computer Science graduate from Langara College
-            (Vancouver, BC). I love listening to music and playing soccer.
+            (Vancouver, BC). I am passionate about coding and solving problems
+            through code, and I am excited to work alongside other amazing
+            programmers and learn so much more!
             <br />
-            <br />I love learning innovative technologies and building web
-            applications that make life easier. Looking for an opportunity to
-            use my skills that I acquired during my studies with a creative and
-            ambitious team. Currently able to work Full Time with PGWP.
+            <br />
+            Looking for an opportunity to use my skills that I acquired during
+            my studies with a creative and ambitious team. Currently able to
+            work Full Time with PGWP.
           </p>
         </div>
       </StyledContainer>
