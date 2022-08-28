@@ -77,7 +77,8 @@ const ProjectsData: projectDataType[] = [
   {
     id: 4,
     title: 'Prattle-v2',
-    description: 'Full Stack instant messaging application',
+    description:
+      'Full Stack instant messaging application built as a part of final project in school',
     stack: [
       'Angular',
       'Typescript',
