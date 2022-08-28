@@ -73,7 +73,7 @@ interface Props {
 const StyledIcon = styled.span<Props>`
   svg {
     transition: fill 200ms, color 0.35s linear;
-    color: ${({ theme }) => theme.flipWhiteColor};
+    color: ${({ theme }) => theme.text};
   }
   svg:hover {
     fill: ${(props) => props.fillColor};

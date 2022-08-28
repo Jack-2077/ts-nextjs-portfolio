@@ -7,6 +7,5 @@ declare module 'styled-components' {
     text: string;
     border: string;
     borderTop: string;
-    flipWhiteColor: string;
   }
 }

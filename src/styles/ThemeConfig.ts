@@ -6,7 +6,6 @@ export const lightTheme = {
   text: '#000000',
   border: '#f1f3f5',
   borderTop: '#e6e8eb',
-  flipWhiteColor: '#000000',
 };
 
 export const darkTheme = {
@@ -15,7 +14,6 @@ export const darkTheme = {
   text: '#ffffff',
   border: '#232323',
   borderTop: '#343434',
-  flipWhiteColor: '#ffffff',
 };
 
 export const GlobalStyles = createGlobalStyle`

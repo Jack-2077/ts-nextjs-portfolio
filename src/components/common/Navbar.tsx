@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 
 import '@theme-toggles/react/css/Expand.css';
 import { Expand } from '@theme-toggles/react';
+import Image from 'next/future/image';
 
 interface toggleThemeType {
   toggleThemeHandler: () => void;
@@ -29,7 +30,7 @@ const StyledNav = styled.nav`
   border-bottom: 2px solid ${({ theme }) => theme.border};
   transition: border 0.35s linear;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   min-height: 4rem;
 
@@ -71,7 +72,7 @@ const StyledNav = styled.nav`
     border-bottom: 2px solid ${({ theme }) => theme.secondary};
 
     &:hover {
-      color: ${(props) => props.theme.flipWhiteColor};
+      color: ${(props) => props.theme.text};
       transition: color 0.2s ease-in-out;
     }
   }
@@ -95,6 +96,9 @@ export default function Navbar({ toggleThemeHandler }: toggleThemeType) {
     <Container>
       <div></div>
       <StyledNav>
+        <a href='/' aria-label='home'>
+          <Image src='/assets/logo.svg' alt='asas' width={35} height={40} />
+        </a>
         <ul role='list'>
           <span className='aria-invisible'>
             current section: {currentSection}
