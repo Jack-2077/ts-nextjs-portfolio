@@ -24,10 +24,10 @@ const StyledContainer = styled.div`
 
     width: 100%;
     & > p {
+      font-weight: 450;
       &:nth-child(1) {
         margin: 0px 0px 0.5rem;
         max-width: none;
-        font-weight: 300;
       }
 
       &:nth-child(2) {
@@ -42,7 +42,6 @@ const StyledContainer = styled.div`
       &:nth-child(3) {
         margin: 2.5rem 0px;
         max-width: 400px;
-        font-weight: 300;
       }
     }
   }

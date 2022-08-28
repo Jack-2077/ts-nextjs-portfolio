@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const lightTheme = {
   background: '#f8f9fa',
   secondary: '#ff284d',
-  text: '#363537',
+  text: '#000000',
   border: '#f1f3f5',
   borderTop: '#e6e8eb',
   flipWhiteColor: '#000000',
@@ -12,7 +12,7 @@ export const lightTheme = {
 export const darkTheme = {
   background: '#1c1c1c',
   secondary: '#ff284d',
-  text: '#FAFAFA',
+  text: '#ffffff',
   border: '#232323',
   borderTop: '#343434',
   flipWhiteColor: '#ffffff',

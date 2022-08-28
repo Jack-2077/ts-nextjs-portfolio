@@ -64,7 +64,7 @@ const StyledProject = styled.div<Props>`
 
     &__heading {
       font-size: 1.8rem;
-      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
     }
 
     &__description {

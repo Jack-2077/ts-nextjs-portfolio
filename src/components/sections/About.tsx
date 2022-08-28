@@ -28,19 +28,34 @@ const socials = [
 
 const StyledContainer = styled.div`
   display: flex;
+
   justify-content: space-around;
+  margin: 2em auto;
 
   .image-container {
     text-align: center;
 
     img {
-      border: 5px solid white;
       border-radius: 130px;
     }
   }
   .description {
+    line-height: 1.65;
     width: 60%;
-    padding-top: 5%;
+  }
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+
+    .description {
+      width: 100%;
+    }
+
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 
@@ -71,10 +86,11 @@ export default function About() {
       <StyledContainer>
         <div className='image-container'>
           <Image
-            src='/assets/Langara.png'
-            height={100}
-            width={100}
-            alt='Logo of Langara College'
+            src='/assets/profile.png'
+            height={200}
+            width={200}
+            quality={100}
+            alt='A photograph of Jack John'
           />
           <StyledSocialContainer>
             {socials.map(({ title, Icon, link, fill }) => (
@@ -94,11 +110,15 @@ export default function About() {
           </StyledSocialContainer>
         </div>
         <div className='description'>
-          Hello! I'm Jack, a Computer Science graduate from Langara College
-          (Vancouver, BC). I focus on using my diverse skill set to deliver
-          effective solutions to problems at any level of the application stack.
-          Passionate, well-organized person, problem solver, with strong
-          attention to detail.
+          <p>
+            Hello! I'm Jack, a Computer Science graduate from Langara College
+            (Vancouver, BC). I love listening to music and playing soccer.
+            <br />
+            <br />I love learning innovative technologies and building web
+            applications that make life easier. Looking for an opportunity to
+            use my skills that I acquired during my studies with a creative and
+            ambitious team. Currently able to work Full Time with PGWP.
+          </p>
         </div>
       </StyledContainer>
     </Layout>

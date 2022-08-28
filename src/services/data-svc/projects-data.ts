@@ -86,7 +86,7 @@ const ProjectsData: projectDataType[] = [
       'Auth0',
       'Socket.io',
       'jQuery',
-      ' Angular Material',
+      'Angular Material',
     ],
     repoLink: 'https://github.com/Jack-2077/Prattle-v2',
     img: prattle2,
