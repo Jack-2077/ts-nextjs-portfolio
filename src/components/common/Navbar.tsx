@@ -1,4 +1,5 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
+import NextLink from 'next/link';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
 
@@ -96,9 +97,17 @@ export default function Navbar({ toggleThemeHandler }: toggleThemeType) {
     <Container>
       <div></div>
       <StyledNav>
-        <a href='/' aria-label='home'>
-          <Image src='/assets/logo.svg' alt='asas' width={35} height={40} />
-        </a>
+        <NextLink href='/'>
+          <a aria-label='home'>
+            <Image
+              src='/assets/logo.svg'
+              alt='asas'
+              width={35}
+              height={40}
+              quality={100}
+            />
+          </a>
+        </NextLink>
         <ul role='list'>
           <span className='aria-invisible'>
             current section: {currentSection}

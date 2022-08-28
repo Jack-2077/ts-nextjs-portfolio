@@ -111,10 +111,10 @@ export default function About() {
         </div>
         <div className='description'>
           <p>
-            Hello! I'm Jack, a Computer Science graduate from Langara College
-            (Vancouver, BC). I am passionate about coding and solving problems
-            through code, and I am excited to work alongside other amazing
-            programmers and learn so much more!
+            Hello! I&apos;m Jack, a Computer Science graduate from Langara
+            College (Vancouver, BC). I am passionate about coding and solving
+            problems through code, and I am excited to work alongside other
+            amazing programmers and learn so much more!
             <br />
             <br />
             Looking for an opportunity to use my skills that I acquired during
