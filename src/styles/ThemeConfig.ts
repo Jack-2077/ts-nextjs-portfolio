@@ -52,15 +52,21 @@ footer {
     transition: all 0.35s linear;
   }
 
-    ::-webkit-scrollbar {
-      width: 16px;
-    }
+ 
+  ::-webkit-scrollbar {
+    width: 12px;
+    background-color: hsl(225deg, 25%, 95%);
+}
 
-    ::-webkit-scrollbar-thumb {
-      height: 56px;
-      border-radius: 8px;
-      border: 4px solid transparent;
-      background-clip: content-box;
-      background-color: hsl(0, 0%, 67%);
-    }
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: hsl(225deg, 12%, 40%);
+    border: 2px solid hsl(225deg, 25%, 95%);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: transparent;
+}
+
 `;
