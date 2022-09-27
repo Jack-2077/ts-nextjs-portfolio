@@ -51,4 +51,16 @@ footer {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
     transition: all 0.35s linear;
   }
+
+    ::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 56px;
+      border-radius: 8px;
+      border: 4px solid transparent;
+      background-clip: content-box;
+      background-color: hsl(0, 0%, 67%);
+    }
 `;
