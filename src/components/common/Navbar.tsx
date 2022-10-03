@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NextLink from 'next/link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-scroll';
 
 import '@theme-toggles/react/css/Expand.css';
@@ -9,6 +9,10 @@ import Image from 'next/future/image';
 
 interface toggleThemeType {
   toggleThemeHandler: () => void;
+}
+
+interface NavProps {
+  isTransparent: boolean;
 }
 
 const Container = styled.div`
@@ -25,15 +29,22 @@ const Container = styled.div`
   }
 `;
 
-const StyledNav = styled.nav`
+const StyledNav = styled.nav<NavProps>`
   padding: 0.3rem 1.2rem;
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid ${({ theme }) => theme.border};
   transition: border 0.35s linear;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 4rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.1s linear;
+  border-bottom: 2px solid transparent;
+
+  ${({ isTransparent }) =>
+    isTransparent &&
+    css`
+      border-bottom-color: ${({ theme }) => theme.border};
+    `}
 
   ul {
     list-style: none;
@@ -93,10 +104,23 @@ const StyledNav = styled.nav`
 
 export default function Navbar({ toggleThemeHandler }: toggleThemeType) {
   const [currentSection, setCurrentSection] = useState('');
+  const [isTransparent, setIsTransparent] = useState(false);
+
+  useEffect(() => {
+    const changeBackground = () => {
+      setIsTransparent(window.scrollY > 200);
+    };
+    window.addEventListener('scroll', changeBackground);
+
+    return () => {
+      window.removeEventListener('scroll', changeBackground);
+    };
+  }, []);
+
   return (
     <Container>
       <div></div>
-      <StyledNav>
+      <StyledNav isTransparent={isTransparent}>
         <NextLink href='/'>
           <a aria-label='home'>
             <Image
