@@ -10,24 +10,22 @@ interface Props {
 
 const adjust = (hexColor: string, magnitude: number) => {
   hexColor = hexColor.replace(`#`, ``);
+
   if (hexColor === '121212') {
     return '#ffffff';
   }
-  if (hexColor.length === 6) {
-    const decimalColor = parseInt(hexColor, 16);
-    let r = (decimalColor >> 16) + magnitude;
-    r > 255 && (r = 255);
-    r < 0 && (r = 0);
-    let g = (decimalColor & 0x0000ff) + magnitude;
-    g > 255 && (g = 255);
-    g < 0 && (g = 0);
-    let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
-    b > 255 && (b = 255);
-    b < 0 && (b = 0);
-    return `#${(g | (b << 8) | (r << 16)).toString(16)}`;
-  } else {
-    return hexColor;
-  }
+
+  const decimalColor = parseInt(hexColor, 16);
+  let r = (decimalColor >> 16) + magnitude;
+  r > 255 && (r = 255);
+  r < 0 && (r = 0);
+  let g = (decimalColor & 0x0000ff) + magnitude;
+  g > 255 && (g = 255);
+  g < 0 && (g = 0);
+  let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
+  b > 255 && (b = 255);
+  b < 0 && (b = 0);
+  return `#${(g | (b << 8) | (r << 16)).toString(16)}`;
 };
 
 const StyledProject = styled.div<Props>`
@@ -37,6 +35,7 @@ const StyledProject = styled.div<Props>`
   width: 100%;
   border-radius: 1rem;
   background-color: ${(props) => props.bgColor};
+  filter: drop-shadow(1px 2px 6px ${(props) => props.bgColor});
   padding: 2em;
   gap: 2%;
 
@@ -104,39 +103,36 @@ const StyledProject = styled.div<Props>`
         gap: 1.8em;
       }
 
-      button {
+      a {
         background-color: ${(props) => adjust(props.bgColor, 45)};
+        color: rgb(0, 0, 0);
         border: 0;
         border-radius: 0.5rem;
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-        padding: 0.75rem 3rem 0.75rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
+        font-size: 0.875rem;
         text-transform: capitalize;
         transition: all 0.25s ease-in-out 0s;
-        display: flex;
+        height: 2.5rem;
+        min-width: 8rem;
 
-        @media only screen and (max-width: 520px) {
-          width: 32vw;
-          padding: 0.75rem 0 0.75rem 0.5rem;
+        @media only screen and (max-width: 380px) {
+          min-width: 7rem;
         }
 
-        span {
-          flex-shrink: 0;
-          max-width: 100%;
-        }
-
-        span svg {
-          margin-left: 0.5rem;
+        svg {
+          margin-left: 10px;
         }
       }
 
-      a + a button {
+      a + a {
         border: 1px solid rgb(255, 255, 255);
         background-color: transparent;
       }
 
-      button:hover {
+      a:hover {
         background-color: rgb(249, 250, 251);
       }
     }
@@ -145,7 +141,7 @@ const StyledProject = styled.div<Props>`
   .project__img {
     padding: 2em 0;
     img {
-      width: 500px; //Any width you want to set the image to.
+      width: 500px;
       max-width: 100%;
       height: auto;
     }
@@ -187,11 +183,8 @@ export default function Project({
             rel='noopener noreferrer'
             href={repoLink}
           >
-            <button>
-              <span>
-                view code <ExternalLinkIcon />
-              </span>
-            </button>
+            <span>view code</span>
+            <ExternalLinkIcon />
           </a>
           {demoLink && (
             <a
@@ -201,11 +194,8 @@ export default function Project({
               rel='noopener noreferrer'
               href={demoLink}
             >
-              <button>
-                <span>
-                  see live site <ExternalLinkIcon />
-                </span>
-              </button>
+              <span>see live site</span>
+              <ExternalLinkIcon />
             </a>
           )}
         </div>
