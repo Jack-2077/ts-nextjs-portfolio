@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { ExternalLinkIcon } from './';
 import { projectDataType } from '../../services/data-svc/projects-data';
@@ -147,7 +147,157 @@ const StyledProject = styled.div<Props>`
     }
   }
 `;
-export default function Project({
+// export function Project({
+//   id,
+//   title,
+//   description,
+//   stack,
+//   repoLink,
+//   demoLink,
+//   img,
+//   color,
+// }: projectDataType) {
+//   return (
+//     <StyledProject bgColor={color}>
+//       <div className='project'>
+//         <h3 className='project__heading' role='heading'>
+//           {title}
+//         </h3>
+//         <p className='project__description' role='note'>
+//           {description}
+//         </p>
+
+//         <ul aria-label='tech stack' className='project__techStack'>
+//           {stack.map((item: string) => (
+//             <li key={`${id}-${item}`}>
+//               <p>{item}</p>
+//             </li>
+//           ))}
+//         </ul>
+//         <div className='project__btns'>
+//           <a
+//             role='link'
+//             aria-label={`View ${title} details`}
+//             tabIndex={0}
+//             target='_blank'
+//             rel='noopener noreferrer'
+//             href={repoLink}
+//           >
+//             <span>view code</span>
+//             <ExternalLinkIcon />
+//           </a>
+//           {demoLink && (
+//             <a
+//               role='link'
+//               aria-label={`View ${title} site`}
+//               target='_blank'
+//               rel='noopener noreferrer'
+//               href={demoLink}
+//             >
+//               <span>see live site</span>
+//               <ExternalLinkIcon />
+//             </a>
+//           )}
+//         </div>
+//       </div>
+
+//       <div className='project__img'>
+//         <Image role='img' src={img} alt={`snapshot of ${title} website`} obje />
+//       </div>
+//     </StyledProject>
+//   );
+// }
+
+const StyledProjectCard = styled.div<Props>`
+  border-radius: 0.5rem;
+  background-color: rgba(51, 54, 70, 1);
+  height: 100%;
+  .project {
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+
+      & > div {
+        display: flex;
+        flex: 1 1 0%;
+        align-items: center;
+        height: 100%;
+        padding: 2rem;
+        background: linear-gradient(
+          to right bottom,
+          rgb(171, 97, 239),
+          rgb(147, 51, 234)
+        );
+
+        div {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      img {
+        border-radius: 0.5rem;
+        box-shadow: 0 0 transparent, 0 0 transparent,
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+    }
+
+    &__info {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 0%;
+      justify-content: space-between;
+      border-color: rgba(229, 231, 235, 1);
+    }
+
+    &__heading {
+      line-height: 1;
+      font-weight: 500;
+      font-size: 2.25rem;
+      font-family: Plus Jakarta Display, Inter, sans-serif;
+      margin-bottom: 1.5rem;
+    }
+
+    &__techStack {
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+
+      p {
+        color: rgba(209, 213, 219, 1);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-family: JetBrains Mono, Roboto Mono;
+        padding: 0.25rem 0.5rem;
+        border-color: rgba(229, 231, 235, 1);
+        border-width: 1px;
+        border-radius: 0.125rem;
+        margin-bottom: 0.75rem;
+        margin-right: 0.75rem;
+        border: 0 solid;
+      }
+    }
+
+    &__description {
+      line-height: 1.8;
+      color: rgba(209, 213, 219, 1);
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+  }
+`;
+export default function newCard({
   id,
   title,
   description,
@@ -158,52 +308,36 @@ export default function Project({
   color,
 }: projectDataType) {
   return (
-    <StyledProject bgColor={color}>
+    <StyledProjectCard bgColor='red'>
       <div className='project'>
-        <h3 className='project__heading' role='heading'>
-          {title}
-        </h3>
-        <p className='project__description' role='note'>
-          {description}
-        </p>
-
-        <ul aria-label='tech stack' className='project__techStack'>
-          {stack.map((item: string) => (
-            <li key={`${id}-${item}`}>
-              <p>{item}</p>
-            </li>
-          ))}
-        </ul>
-        <div className='project__btns'>
-          <a
-            role='link'
-            aria-label={`View ${title} details`}
-            tabIndex={0}
-            target='_blank'
-            rel='noopener noreferrer'
-            href={repoLink}
-          >
-            <span>view code</span>
-            <ExternalLinkIcon />
-          </a>
-          {demoLink && (
-            <a
-              role='link'
-              aria-label={`View ${title} site`}
-              target='_blank'
-              rel='noopener noreferrer'
-              href={demoLink}
-            >
-              <span>see live site</span>
-              <ExternalLinkIcon />
-            </a>
-          )}
+        <div className='project__img'>
+          <div>
+            <div>
+              <Image
+                role='img'
+                src={img}
+                width={400}
+                height={285}
+                objectFit='contain'
+                alt={`snapshot of ${title} website`}
+              />
+            </div>
+          </div>
+        </div>
+        <div className='project__info'>
+          <div>
+            <h3 className='project__heading'> {title}</h3>
+            <ul aria-label='tech stack' className='project__techStack'>
+              {stack.map((item: string) => (
+                <li key={`${id}-${item}`}>
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ul>
+            <p className='project__description'>{description}</p>
+          </div>
         </div>
       </div>
-
-      <div className='project__img'>
-        <Image role='img' src={img} alt={`snapshot of ${title} website`} />
-      </div>
-    </StyledProject>
+    </StyledProjectCard>
   );
 }
