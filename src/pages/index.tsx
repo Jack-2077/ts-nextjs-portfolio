@@ -1,21 +1,28 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps } from 'next';
 import { About, Projects, Skills, Education } from '../components/sections';
-import Head from 'next/head';
-import Image from 'next/image';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
+import { projectsData, type projects } from '../services/data-svc';
 
-const Home: NextPage = () => {
+interface Props {
+  projectsData: projects[];
+}
+
+const Home = ({ projectsData }: Props) => {
   return (
     <div className='flex flex-col justify-between text-white layout bg-shade-1'>
       <Navbar />
-      <Projects />
+      <Projects data={projectsData} />
       <Skills />
       <About />
       <Education />
       <Footer />
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return { props: { projectsData } };
 };
 
 export default Home;

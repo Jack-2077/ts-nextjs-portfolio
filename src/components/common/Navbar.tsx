@@ -24,14 +24,13 @@ export default function Navbar() {
           </a>
           <div className='hidden space-x-3 md:flex'>
             <a
-              href='/'
-              aria-current='page'
+              href='/projects?t=personal'
               className='relative nav-link active--exact active'
             >
-              <span className='block'>Home</span>
+              <span className='block'>Projects</span>
             </a>
             <a href='/projects?t=personal' className='relative nav-link'>
-              <span className='block'>Projects</span>
+              <span className='block'>About</span>
             </a>
             <a href='/contact' className='relative nav-link'>
               <span className='block'>Contact</span>
