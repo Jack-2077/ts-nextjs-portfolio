@@ -12,16 +12,12 @@ export interface projects {
   repoLink: string;
   demoLink?: string;
   img: {
-    height: string;
-    width: string;
-    blur?: string;
-    thumbnail: string;
-    detailed: string;
-    videoSrc: {
-      src: string;
-      poster: string;
-    } | null;
-    qrImgSrc: string | null;
+    src: string;
+    height: number;
+    width: number;
+    blurDataURL: string;
+    blurWidth: number;
+    blurHeight: number;
   };
   color: string;
 }
