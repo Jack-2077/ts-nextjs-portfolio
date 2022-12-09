@@ -27,7 +27,7 @@ export const projectsData = [
     id: 1,
     title: 'Demo Reel Showcase',
     description:
-      'Portfolio website for a client working in the vfx industry to showcase all of his reels and photos',
+      'A Portfolio website for a visual effects artist to showcase all of his reels and photos. Configured Amazon S3 to efficiently deliver files with low latency over CloudFront CDN.',
     stack: [
       'Next.js',
       'AWS S3',
@@ -44,10 +44,9 @@ export const projectsData = [
     id: 2,
     title: 'Tuned',
     description:
-      'Web app for adding and playing your favorite tracks from youtube and soundcloud',
+      'A free tool to add and play videos from youtube and tracks from soundcloud without any advertisements in between. It does this by using the YouTube iFrame Player API and SoundCloud Widget API. Able to customize the thumbnails and title of the media added.',
     stack: [
       'React',
-      'React Player',
       'Redux ToolKit',
       'RTK Query',
       'Supabase',
@@ -62,7 +61,7 @@ export const projectsData = [
     id: 3,
     title: 'Spotified',
     description:
-      'Full Stack web app for visualizing personalized Spotify data using Spotify API',
+      'A Full Stack web application for visualizing personalized Spotify data using Spotify API. View your top 100 artists, songs and more. Sort your playlist based on BPM, Danceability and Popularity.',
     stack: [
       'React.js',
       'Spotify API',
@@ -78,7 +77,7 @@ export const projectsData = [
     id: 4,
     title: 'Prattle-v2',
     description:
-      'Full Stack instant messaging application built as a part of final project in school',
+      'This is a fun project that I made in my final semester in school with another team member. Prattle is a full stack instant messaging application built in Angular and Flask. Was responsible for integrating Socket.io, user authentication and modelling a NoSQL database for storing and retrieving user messages.',
     stack: [
       'Angular',
       'Typescript',
@@ -97,7 +96,7 @@ export const projectsData = [
     id: 5,
     title: 'Todo-App-v2',
     description:
-      'A updated version with a state management library and graphql queries to fetch data',
+      'This is a revamped version of my very first application in React. Main objective was to learn and explore a state management library and graphql queries for fetching data in a PostgreSQL database.',
     stack: ['React', 'Apollo Client', 'GraphQL', 'Postgres'],
     demoLink: 'https://todolist-v2-apollo.vercel.app',
     repoLink: 'https://github.com/Jack-2077/Todo-App',

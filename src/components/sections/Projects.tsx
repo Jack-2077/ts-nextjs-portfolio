@@ -27,21 +27,23 @@ export default function Projects({ data }: { data: projects[] }) {
                 {project.title}
               </h3>
               <p
-                className='text-gray-300 font-regular text-sm mt-4'
+                className='text-gray-300 font-regular text-base mt-4'
                 style={{ lineHeight: 1.8 }}
               >
                 {project.description}
               </p>
             </div>
             <div className='flex mt-12 items-center'>
-              <a
-                rel='nofollow noreferrer noopener'
-                href={project.demoLink}
-                target='_blank'
-                className='inline-flex items-center justify-center font-sans font-medium leading-7 transition outline-none focus:outline-none mr-10 is-type-primary'
-              >
-                <span className='relative z-10'>Open App</span>
-              </a>
+              {project.demoLink && (
+                <a
+                  rel='nofollow noreferrer noopener'
+                  href={project.demoLink}
+                  target='_blank'
+                  className='inline-flex items-center justify-center font-sans font-medium leading-7 transition outline-none focus:outline-none mr-10 is-type-primary'
+                >
+                  <span className='relative z-10'>Open App</span>
+                </a>
+              )}
               <a
                 href={project.repoLink}
                 className='inline-flex items-center justify-center font-sans font-medium leading-7 transition outline-none focus:outline-none is-type-link'

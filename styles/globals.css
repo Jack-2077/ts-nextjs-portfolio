@@ -203,7 +203,7 @@
   --tw-text-opacity: 1;
   color: rgba(255, 171, 30, var(--tw-text-opacity));
   background: transparent;
-  transition: color 0.25s ease-in-out;
+  transition: color 0.25s;
 }
 
 .is-type-link::before {
