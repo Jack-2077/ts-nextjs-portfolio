@@ -6,6 +6,17 @@
   color: rgba(255, 171, 30, 1);
 }
 
+.bg-primary {
+  background-color: rgba(255, 171, 30, 1);
+}
+.primary-border {
+  border-radius: 9999px;
+  display: block;
+  position: relative;
+  width: 42%;
+  height: 6px;
+}
+
 .header {
   height: 100px;
   will-change: height;
@@ -219,4 +230,22 @@
 
 .is-type-link:hover {
   color: #ffff;
+}
+
+.tile {
+  transition: all 0.15s;
+}
+
+.tile:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(66, 70, 87, var(--tw-bg-opacity));
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
+    var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  transform: translateY(-10px);
+  z-index: 5;
+}
+.skill-icon svg {
+  width: 48px;
+  height: 48px;
 }
