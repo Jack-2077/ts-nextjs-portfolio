@@ -17,7 +17,10 @@ export default function Skills() {
       </div>
       <ul className='flex flex-wrap mt-20 -mx-3 p-0 list-none'>
         {SkillsData.map((skill) => (
-          <li className='w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-3'>
+          <li
+            className='w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-3'
+            key={skill.label}
+          >
             <a
               href={skill.link}
               target='_blank'
