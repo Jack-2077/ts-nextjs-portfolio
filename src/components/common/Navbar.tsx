@@ -5,6 +5,11 @@ import Image from 'next/image';
 
 export default function Navbar() {
   const [currentSection, setCurrentSection] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
   const [isTransparent, setIsTransparent] = useState(false);
 
   useEffect(() => {
@@ -59,11 +64,16 @@ export default function Navbar() {
             ))}
           </div>
           <div className='flex md:hidden'>
-            <button className='nav-link nav-control'>Menu</button>
+            <button
+              className='nav-link nav-control nav-button'
+              onClick={handleMenuToggle}
+            >
+              Menu
+            </button>
           </div>
         </nav>
       </div>
-      <div className='menu md:hidden'>
+      <div className={`menu md:hidden ${isOpen ? 'is-open' : ''}`}>
         <div className='menu-content'>
           <a
             href='/'
@@ -71,24 +81,36 @@ export default function Navbar() {
             className='inline-flex items-center pr-5 flex-shrink-0 self-start px-6 py-5 active--exact active'
             title='Jack'
           >
-            J
+            <Image
+              src='/logo.svg'
+              alt='logo'
+              width={25}
+              height={25}
+              quality={100}
+              className='w-6'
+            />
           </a>
-          <button className='absolute nav-link nav-control nav-close'>
+          <button
+            className='absolute nav-link nav-control nav-close nav-button'
+            onClick={handleMenuToggle}
+          >
             Close
           </button>
-          <a
-            href='/'
-            aria-current='page'
-            className='relative nav-link active--exact active'
-          >
-            <span className='block'>Home</span>
-          </a>
-          <a href='/projects' className='relative nav-link'>
-            <span className='block'>Projects</span>
-          </a>
-          <a href='/contact' className='relative nav-link'>
-            <span className='block'>Contact</span>
-          </a>
+          {['Projects', 'About', 'Contact'].map((section) => (
+            <Link
+              activeClass='active--exact active'
+              className='relative nav-link'
+              to={section}
+              aria-label={`scroll to ${section} section`}
+              onSetActive={(section) => setCurrentSection(section)}
+              offset={50}
+              spy
+              smooth
+              key={section}
+            >
+              <span className='block'>{section}</span>
+            </Link>
+          ))}
         </div>
         <div className='menu-bg' />
       </div>

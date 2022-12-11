@@ -77,8 +77,8 @@
   transform: translateX(10px);
 }
 
-.nav-link.active:before,
-.nav-link:hover:before {
+.nav-link.active:not(.nav-button):before,
+.nav-link:hover:not(.nav-button):before {
   transform: translateY(-50%) scale(1);
 }
 .nav-link:before,
@@ -133,6 +133,14 @@
   z-index: 50;
 }
 
+.menu.is-open {
+  visibility: visible;
+}
+
+.menu.is-open .menu-content {
+  transform: translateY(0);
+}
+
 .menu-bg {
   position: fixed;
   top: 0;
@@ -149,6 +157,10 @@
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.15s;
+}
+
+.menu.is-open .menu-bg {
+  opacity: 0.9;
 }
 
 .menu-content {
