@@ -12,7 +12,7 @@ export default function Skills() {
       <div className='heading block mb-12 relative leading-none font-heading font-medium text-5xl'>
         <div className='inline-block relative'>
           <h2 className='relative z-10 leading-tight my-0'>Tools & Skills</h2>
-          <span className='line mt-10 primary-border bg-primary' />
+          <span className='mt-10 primary-border bg-primary' />
         </div>
       </div>
       <ul className='flex flex-wrap mt-20 -mx-3 p-0 list-none'>

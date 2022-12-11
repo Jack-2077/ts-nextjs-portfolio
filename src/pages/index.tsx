@@ -1,5 +1,11 @@
 import type { GetStaticProps } from 'next';
-import { About, Projects, Skills, Education } from '../components/sections';
+import {
+  About,
+  Projects,
+  Skills,
+  Education,
+  Contact,
+} from '../components/sections';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import { projectsData, type projects } from '../services/data-svc';
@@ -16,6 +22,7 @@ const Home = ({ projectsData }: Props) => {
       <Skills />
       <About />
       <Education />
+      <Contact />
       <Footer />
     </div>
   );

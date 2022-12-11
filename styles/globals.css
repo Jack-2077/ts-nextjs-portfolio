@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&display=swap');
+
+.font-heading {
+  font-family: 'Plus Jakarta Sans', Inter, sans-serif;
+}
 
 .text-primary {
   color: rgba(255, 171, 30, 1);
@@ -248,4 +253,31 @@
 .skill-icon svg {
   width: 48px;
   height: 48px;
+}
+
+.form-label {
+  display: block;
+  padding-bottom: 0.75rem;
+  font-family: Inter, sans-serif;
+}
+
+.form-input,
+.form-input:focus {
+  --tw-border-opacity: 1;
+  --tw-bg-opacity: 1;
+  background-color: rgba(66, 70, 87, var(--tw-bg-opacity));
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  border-color: rgba(95, 100, 120, var(--tw-border-opacity));
+  padding: 1rem 1.25rem;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.025em;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
