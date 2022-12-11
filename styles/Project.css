@@ -1,0 +1,75 @@
+.project-container {
+  transition: all 0.15s;
+}
+
+.project-container:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(66, 70, 87, var(--tw-bg-opacity));
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
+    var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+  transform: translateY(-10px);
+  z-index: 5;
+}
+
+.is-type-primary {
+  position: relative;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  padding: 0.75rem 2rem;
+
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgba(29, 31, 41, var(--tw-text-opacity));
+  transition: all 0.15s;
+
+  border-color: rgba(255, 189, 77, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 171, 30, var(--tw-bg-opacity));
+}
+
+.is-type-primary:hover {
+  background-color: rgba(255, 189, 77, var(--tw-bg-opacity));
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-translate-y: -0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 189, 77, var(--tw-bg-opacity));
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 transparent),
+    var(--tw-ring-shadow, 0 0 transparent), var(--tw-shadow);
+}
+
+.is-type-link {
+  position: relative;
+  border-radius: 0;
+  letter-spacing: 0.025em;
+  --tw-text-opacity: 1;
+  color: rgba(255, 171, 30, var(--tw-text-opacity));
+  background: transparent;
+  transition: color 0.25s;
+}
+
+.is-type-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.is-type-link:hover {
+  color: #ffff;
+}
