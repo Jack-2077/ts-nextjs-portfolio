@@ -1,11 +1,6 @@
 import React from 'react';
 import SkillsData from '../../services/skills-svc';
 
-// transform: none;
-// opacity: 1;
-// display: grid;
-// margin: 0px 1em 1em;
-// justify-items: center;
 export default function Skills() {
   return (
     <div className='container mx-auto lg:px-10 py-32 px-10'>

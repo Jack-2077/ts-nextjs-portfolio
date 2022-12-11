@@ -32,7 +32,7 @@ const FormInput = ({ label, placeHolder, inputType }: formProps) => {
 };
 export default function Contact() {
   return (
-    <section id='contact' className='bg-shade-2 py-32 mt-0'>
+    <section id='Contact' className='bg-shade-2 py-32 mt-0'>
       <div className='container mx-auto lg:px-10 px-10'>
         <div className='flex flex-wrap'>
           <div className='w-full lg:w-1/2'>

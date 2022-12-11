@@ -65,13 +65,14 @@
   letter-spacing: 0.05em;
   --tw-text-opacity: 1;
   color: rgba(156, 163, 175, var(--tw-text-opacity));
+  cursor: pointer;
 }
 .nav-link.active span {
   transform: translateX(10px);
 }
 
 .nav-link.active:before {
-  transform: translateY(-50%) scale(1);
+  transform: translateY(-100%) scale(1);
 }
 .nav-link:before,
 .nav-link span {

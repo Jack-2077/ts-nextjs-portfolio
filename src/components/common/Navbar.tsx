@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
 
 import Image from 'next/image';
 
 export default function Navbar() {
+  const [currentSection, setCurrentSection] = useState('');
+
   const isActive = true;
   return (
     <header className='header fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b border-transparent'>
@@ -23,18 +26,21 @@ export default function Navbar() {
             />
           </a>
           <div className='hidden space-x-3 md:flex'>
-            <a
-              href='/projects?t=personal'
-              className='relative nav-link active--exact active'
-            >
-              <span className='block'>Projects</span>
-            </a>
-            <a href='/projects?t=personal' className='relative nav-link'>
-              <span className='block'>About</span>
-            </a>
-            <a href='/contact' className='relative nav-link'>
-              <span className='block'>Contact</span>
-            </a>
+            {['Projects', 'About', 'Contact'].map((section) => (
+              <Link
+                activeClass='active--exact active'
+                className='relative nav-link'
+                to={section}
+                aria-label={`scroll to ${section} section`}
+                onSetActive={(section) => setCurrentSection(section)}
+                offset={-90}
+                spy
+                smooth
+                key={section}
+              >
+                <span className='block'>{section}</span>
+              </Link>
+            ))}
           </div>
           <div className='flex md:hidden'>
             <button className='nav-link nav-control'>Menu</button>
@@ -47,7 +53,7 @@ export default function Navbar() {
             href='/'
             aria-current='page'
             className='inline-flex items-center pr-5 flex-shrink-0 self-start px-6 py-5 active--exact active'
-            title='Pabueco'
+            title='Jack'
           >
             J
           </a>

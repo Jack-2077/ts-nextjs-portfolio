@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section className='bg-shade-2 py-32 mt-0'>
+    <section className='bg-shade-2 py-32 mt-0' id='About'>
       <div className='container mx-auto lg:px-10 px-10'>
         <div className='heading block mb-12 relative leading-none font-heading font-medium text-5xl'>
           <div className='inline-block relative'>
