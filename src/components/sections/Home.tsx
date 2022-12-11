@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 
 export default function Home() {
   return (
@@ -24,13 +25,16 @@ export default function Home() {
             love building fun things and solving problems through code.
           </p>
           <div className='flex items-center mt-10 space-x-10'>
-            <a
-              href='/projects'
-              rel='nofollow noreferrer noopener'
-              className='inline-flex items-center justify-center font-sans font-medium leading-7 transition outline-none focus:outline-none is-type-primary'
+            <Link
+              className='cursor-pointer inline-flex items-center justify-center font-sans font-medium leading-7 transition outline-none focus:outline-none is-type-primary'
+              to='Projects'
+              aria-label={`scroll to Projects section`}
+              offset={50}
+              spy
+              smooth
             >
               <span className='relative z-10'>Explore Projects</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

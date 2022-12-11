@@ -38,6 +38,7 @@ export default function Navbar() {
               width={25}
               height={25}
               quality={100}
+              className='w-6'
             />
           </a>
           <div className='hidden space-x-3 md:flex'>
