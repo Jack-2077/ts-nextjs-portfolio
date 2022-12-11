@@ -4,7 +4,13 @@ import { type projects } from '../../services/data-svc';
 
 export default function Projects({ data }: { data: projects[] }) {
   return (
-    <section id='Projects'>
+    <section id='Projects' className='container mx-auto lg:px-10 py-32 px-10'>
+      <div className='heading block mb-12 relative leading-none font-heading font-medium text-5xl'>
+        <div className='inline-block relative'>
+          <h2 className='relative z-10 leading-tight my-0'>Projects</h2>
+          <span className='mt-10 primary-border bg-primary' />
+        </div>
+      </div>
       <div className='container mx-auto lg:px-10 pb-32'>
         {data.map((project) => (
           <div
