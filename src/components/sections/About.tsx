@@ -39,9 +39,8 @@ export default function About() {
               programmers and learn so much more!
               <br />
               <br />
-              Looking for an opportunity to use my skills that I acquired during
-              my studies with a creative and ambitious team. Currently able to
-              work Full Time with PGWP.
+              Looking for an opportunity to use my skills and experience with a creative and ambitious team. Currently able to
+              work Full Time with work permit.
             </p>
           </div>
         </div>
