@@ -34,7 +34,7 @@ export default function Footer() {
                 <a
                   rel='noopener'
                   target='_blank'
-                  href='https://linkedin.com/in/jack-john-9a8750229/'
+                  href='https://linkedin.com/in/JackJohnViannay/'
                   className='inline-flex items-center justify-center font-sans font-medium leading-7 transition outline-none focus:outline-none mr-6  is-type-link'
                 >
                   <span className='relative z-10'>LinkedIn</span>
